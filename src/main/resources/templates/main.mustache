@@ -1,0 +1,39 @@
+<html>
+    <body>
+        <div>
+            <form action="/logout" method="post">
+                <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+                <input type="submit" value="Sign Out"/>
+            </form>
+        </div>
+        <div> Добавить дело </div>
+        <div>
+            <form method="post">
+                <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+                <input type="text" name="text" placeholder="Введите дело" />
+                <input type="text" name="tag" placeholder="Метка" />
+                <button type="submit">Добавить</button>
+            </form>
+        </div>
+
+        <div> Поиск дел </div>
+        <!-- Так как простой мэпинг уже занят, то добавм доп мэпинг -->
+        <form method="post" action="filter">
+            <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+            <input type="text" name="filter" placeholder="Укажите метку"></input>
+            <button type="submit">Найти</button>
+        </form>
+        <div> Список дел </div>
+        {{#messages}}
+        <div>
+            <b>{{id}}</b>
+            <span>{{text}}</span>
+            <i>{{tag}}</i>
+            <strong>{{authorName}}</strong>
+            {{#user}}
+            <strong>{{id}}</string>
+            {{/user}}
+           </div>
+        {{/messages}}
+    </body>
+</html>

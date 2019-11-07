@@ -1,0 +1,7 @@
+Папка с репозиториями
+MessageRepo -
+UserRepo -
+
+
+Руководство по JPA репозиториям:
+https://docs.spring.io/spring-data/jpa/docs/1.5.0.RELEASE/reference/html/jpa.repositories.html#jpa.query-methods.query-creation
